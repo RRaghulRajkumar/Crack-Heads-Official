@@ -66,15 +66,16 @@
             </div>
         </div>
     </section> -->
-    <style>
+   <style>
   body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   .notification {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ccc;
@@ -319,17 +320,13 @@
         </p></span> 
     <button class="btn-agree" id="agreeButton">Agree</button>
   </div>
-  
   <script>
-    const agreeButton = document.getElementById('agreeButton');
-  
-    agreeButton.addEventListener('click', () => {
-      // Add any additional actions you want to perform before allowing the user to leave
-      // For example: window.location.href = 'new-page.html';
-      // In this example, we're just navigating to a new page
-      window.location.href = '';
-    });
-  </script>
+  const agreeButton = document.getElementById('agreeButton');
+
+  agreeButton.addEventListener('click', () => {
+    document.body.removeChild(document.querySelector('.notification'));
+  });
+</script>
 
 
 
